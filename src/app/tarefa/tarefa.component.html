@@ -11,9 +11,22 @@
     <div class="col-lg-12">
         <table class="table table-bordered table-hover">
             <tr>
+                <th>Id</th>
                 <th>Tarefa</th>
-                <th></th>
-                <th></th>
+                <th>Usuário</th>
+                <th>Status</th>
+                <th>Atividade</th>
+            </tr>
+            <tr *ngFor="let taf of tarefas">
+                <td>{{taf.id}}</td>
+                <td>{{taf.name}}</td>
+                <td>{{userName(taf.idUsuario)}}</td>
+                <td>{{taf.status}}</td>
+                <td>
+                  <ul>
+                    <li *ngFor="let a of taf.atividade" >{{ a.at }}</li>
+                  </ul>
+                </td>
             </tr>
         </table>
     </div>
