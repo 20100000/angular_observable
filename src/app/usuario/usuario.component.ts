@@ -23,20 +23,22 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
 
   usuariosFun(){
        this.userService.getUsuarios().subscribe((res: any) => {
-         this.usuarios = res.usuarios;
+            this.usuarios = res.usuarios;
        });
   }
 
   tarefasFun():any{
-    this.tafService.getTarefas().subscribe((res: any) => {
-      this.tarefas = res.tarefas;
-    });
+      this.tafService.getTarefas().subscribe((res: any) => {
+          this.tarefas = res.tarefas;
+      });
   }
 
   tarefasId(id){
-    var cont = this.tarefas.filter(use => use.idUsuario === id);
-    return cont.length;
+      var cont = this.tarefas.filter(use => use.idUsuario === id);
+      return cont.length;
   }
+
+
 
   ngAfterViewInit(){
       this.usuariosFun();

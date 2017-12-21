@@ -12,16 +12,13 @@ export class UsuarioService {
 
 
   getUsuarios(): Observable<any> {
-    let res;
+      let res;
       return this.http.get("./assets/json/usuario.json")
-        .timeout(30000)
-        .map(res => {
-          let body = res.json();
-          console.log('bodyyyyy',body);
-          return body ;
-        });
-       // .catch((error:any) => console.log(error));
-
+          .timeout(3000)
+          .map(res => {
+            let body = res.json();
+            return body ;
+          });
   }
 
 }

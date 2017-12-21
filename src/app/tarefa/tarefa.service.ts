@@ -14,13 +14,21 @@ export class TarefaService {
 getTarefas(): Observable<any> {
     let res;
     return this.http.get("./assets/json/tarefa.json")
-      .timeout(3000)
-      .map(res => {
-        let body = res.json();
-        return body ;
-      });
-    // .catch((error:any) => console.log(error));
+        .timeout(3000)
+        .map(res => {
+            let body = res.json();
+            return body ;
+        });
+  }
 
+  getStatus(): Observable<any> {
+    let res;
+    return this.http.get("./assets/json/status.json")
+        .timeout(3000)
+        .map(res => {
+            let body = res.json();
+            return body ;
+        });
   }
 
 }
